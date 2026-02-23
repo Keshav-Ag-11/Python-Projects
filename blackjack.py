@@ -1,6 +1,6 @@
 import random
-
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+from logo import logo
+print(logo)
 def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card=random.choice(cards)
@@ -18,7 +18,7 @@ while True:
     choice = input("Type 'y' to get another card , type 'n' to pass")
     if choice == 'n':
         while c<17:
-            card = random.choice(cards)
+            card = deal_card()
             comp.append(card)
             c= sum(comp)
         if c>21:
@@ -39,7 +39,7 @@ while True:
             print("Computer score:", c)
         break
     elif choice == 'y':
-        card=random.choice(cards)
+        card=deal_card()
         human.append(card)
         h=sum(human)
         print(f"Your cards: {human}, current score: {h}")
@@ -48,6 +48,7 @@ while True:
             print("Computer cards:", comp)
             print("Computer score:", c)
             break
+
 
 
 
